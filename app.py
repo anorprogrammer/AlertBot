@@ -1,6 +1,7 @@
 import logging
 
 from aiogram import Bot, Dispatcher, executor, types
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
 
 API_TOKEN = 'BOT TOKEN HERE'
 
@@ -8,6 +9,7 @@ logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
+scheduler = AsyncIOScheduler()
 
 
 @dp.message_handler(commands=['start', 'help'])
